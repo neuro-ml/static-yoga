@@ -24,8 +24,7 @@ jobs:
       - name: Build the package
         run: |
           ./fetch-yoga.sh
-          pip install build
-          python -m build --sdist
+          python setup.py sdist
 
       - name: Install
         run: |
