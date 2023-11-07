@@ -52,3 +52,4 @@ static_yoga = ['py.typed', '**/*.py', '**/*.pyx', '**/*.pxd', '**/*.cpp', '**/*.
 
 [tool.setuptools.dynamic]
 version = { attr = 'static_yoga.__version__.__version__' }
+dependencies = { file = ['requirements.txt'] }
