@@ -44,7 +44,7 @@ build_py = "_build_utils.PyprojectBuild"
 build_ext = "_build_utils.YogaBuilder"
 
 [tool.setuptools.packages.find]
-include = ['static_yoga']
+include = ['static_yoga*']
 namespaces = false
 
 [tool.setuptools.package-data]
