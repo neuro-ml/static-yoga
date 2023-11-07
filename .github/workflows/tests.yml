@@ -24,7 +24,9 @@ jobs:
       - name: Build
         run: |
           ./fetch-yoga.sh
-          pip install -e .
+          pip install build
+          python -m build --sdist
+          pip install dist/*
           pip install -r tests/requirements.txt
 
       - name: Find tests dir
