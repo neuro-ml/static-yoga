@@ -23,13 +23,11 @@ jobs:
 
       - name: Build the package
         run: |
-          python3 -m pip install --upgrade build
           ./fetch-yoga.sh
-          python -m build
 
       - name: Install
         run: |
-          pip install dist/*
+          pip install .
           pip install -r tests/requirements.txt
           
           cd tests
