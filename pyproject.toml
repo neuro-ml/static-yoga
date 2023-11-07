@@ -44,11 +44,11 @@ build_py = "_build_utils.PyprojectBuild"
 build_ext = "_build_utils.YogaBuilder"
 
 [tool.setuptools.packages.find]
-include = ['static_yoga']
+include = ['static_yoga*']
+namespaces = false
 
 [tool.setuptools.package-data]
-static_yoga = ['py.typed', '*.py', '*.pyx', '*.pxd', '*.cpp', '*.h', 'CMakeLists.txt']
+static_yoga = ['py.typed', '**/*.py', '**/*.pyx', '**/*.pxd', '**/*.cpp', '**/*.h', '**/CMakeLists.txt']
 
 [tool.setuptools.dynamic]
 version = { attr = 'static_yoga.__version__.__version__' }
-dependencies = { file = ['requirements.txt'] }
