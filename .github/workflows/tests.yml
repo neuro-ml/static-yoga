@@ -21,15 +21,14 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Build the package
+      - name: Build
         run: |
           ./fetch-yoga.sh
-
-      - name: Install
-        run: |
-          pip install .
+          pip install -e .
           pip install -r tests/requirements.txt
-          
+
+      - name: Find tests dir
+        run: |
           cd tests
           export MODULE_PARENT=$(python -c "import $MODULE_NAME, os; print(os.path.dirname($MODULE_NAME.__path__[0]))")
           export MODULE_PARENT=${MODULE_PARENT%"/"}
